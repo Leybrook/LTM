@@ -402,7 +402,7 @@ float4 main( VS_OUTPUT_TERRAIN Input ) : COLOR
 	float lod = clamp( trunc( mipmapLevel( vTileRepeat ) - 0.5f ), 0.0f, 6.0f );
 	float vMipTexels = pow( 2.0f, ATLAS_TEXEL_POW2_EXPONENT - lod );
 
-	float3 normal = normalize( tex2D( HeightNormal, Input.uv2 * vMapSize.zw ).rbg - 0.5f );
+	float3 normal = normalize( tex2D( HeightNormal, Input.uv2 * vMapSize.zw ).rbg - 1.0f );
 	
 	float4 sample = tex2Dlod( TerrainDiffuse, sample_terrain( IndexU.w, IndexV.w, vTileRepeat, vMipTexels, lod ) );
 
@@ -444,10 +444,10 @@ float4 main( VS_OUTPUT_TERRAIN Input ) : COLOR
 	float3 TerrainColor = tex2D( TerrainColorTint, Input.uv2 ).rgb;	
 	sample.rgb = GetOverlay( sample.rgb, TerrainColor, 0.5f );
 	
-	float2 vBlend = float2( 0.4f, 0.45f );
-	float3 vOut = ( dot(sample.rgb, GREYIFY) * vBlend.x + terrain_color.rgb * vBlend.y );
+	float2 vBlend = float2( 0.4, 0.75f );
+	float3 vOut = ( dot(sample.rgb, GREYIFY * 3.0f) * vBlend.x + terrain_color.rgb * vBlend.y );
 
-	vOut = CalculateLighting( vOut, normal )*0.9f;
+	vOut = CalculateLighting( vOut, normal )*1.0f;
 	vOut = calculate_secondary( Input.uv, vOut, Input.prepos.xz );
 	vOut = ApplyDistanceFog( vOut, Input.prepos, FoWTexture, FoWDiffuse );
 
