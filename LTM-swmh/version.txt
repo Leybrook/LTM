@@ -1,10 +1,1 @@
 0.1b
-- Reshaped nile terrain & trees because of SMWH's nile running outside of SMWH's terrain
-- Partially replaced textures for better looking snow & mountain 'crevices'
-- Trimmed trees in Russia
-- Resized construction model as it became too big
-- Increased texture density
-
-
-0.1a
-- first release
