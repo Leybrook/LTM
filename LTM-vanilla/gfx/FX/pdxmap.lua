@@ -125,8 +125,8 @@ Defines = { } -- Comma separated defines ie. "USE_SIMPLE_LIGHTS", "GUI"
 DeclareShared( [[
 
 static const float3 GREYIFY = float3( 0.212671, 0.715160, 0.072169 );
-static const float TERRAINTILEFREQ = 144.0f;
-static const float NUM_TILES = 5.0f;
+static const float TERRAINTILEFREQ = 128.0f;
+static const float NUM_TILES = 4.0f;
 static const float TEXELS_PER_TILE = 512.0f;
 static const float ATLAS_TEXEL_POW2_EXPONENT= 10.0f;
 static const float WATER_HEIGHT_RECP_SQUARED = ( 1.0f / 19.0f ) * ( 1.0f / 19.0f );
@@ -408,21 +408,15 @@ float4 main( VS_OUTPUT_TERRAIN Input ) : COLOR
 
 	float3 terrain_color = tex2D( ProvinceColorMap, Input.uv ).rgb;
 	
-#ifdef NO_SHADER_TEXTURE_LOD
-float3 terrain_normal = float3( 0,1,0 );
-#else
-float3 terrain_normal = tex2Dlod( TerrainNormal, sample_terrain( IndexU.w, IndexV.w, vTileRepeat, vMipTexels, lod ) ).rbg - 0.5f;
-#endif //NO_SHADER_TEXTURE_LOD
-	
 	if ( vAllSame < 1.0f && vBorderLookup_HeightScale_UseMultisample_Unused.z < 8.0f )
 	{
 		float4 ColorRD = tex2Dlod( TerrainDiffuse, sample_terrain( IndexU.x, IndexV.x, vTileRepeat, vMipTexels, lod ) );
 		float4 ColorLU = tex2Dlod( TerrainDiffuse, sample_terrain( IndexU.y, IndexV.y, vTileRepeat, vMipTexels, lod ) );
 		float4 ColorRU = tex2Dlod( TerrainDiffuse, sample_terrain( IndexU.z, IndexV.z, vTileRepeat, vMipTexels, lod ) );
 
-		float3 terrain_normalRD = tex2Dlod( TerrainNormal, sample_terrain( IndexU.x, IndexV.x, vTileRepeat, vMipTexels, lod ) ).rbg - 0.5f;
-		float3 terrain_normalLU = tex2Dlod( TerrainNormal, sample_terrain( IndexU.y, IndexV.y, vTileRepeat, vMipTexels, lod ) ).rbg - 0.5f;
-		float3 terrain_normalRU = tex2Dlod( TerrainNormal, sample_terrain( IndexU.z, IndexV.z, vTileRepeat, vMipTexels, lod ) ).rbg - 0.5f;
+		float3 terrain_colorRD = tex2D( ProvinceColorMap, Input.uv + vOffsets.yx ).rgb;
+		float3 terrain_colorLU = tex2D( ProvinceColorMap, Input.uv + vOffsets.xy ).rgb;
+		float3 terrain_colorRU = tex2D( ProvinceColorMap, Input.uv + vOffsets.yy ).rgb;
 
 	float2 vFrac = frac( float2( Input.uv.x * vMapSize.x - 0.5f, Input.uv.y * vMapSize.y - 0.5f ) );
 		
@@ -444,25 +438,12 @@ float3 terrain_normal = tex2Dlod( TerrainNormal, sample_terrain( IndexU.w, Index
 			lerp( ColorRU, ColorLU, vBlendFactors.x ),
 			lerp( ColorRD, sample, vBlendFactors.y ), 
 			vBlendFactors.z );
-			
-		terrain_normal = 
-			( terrain_normalRU * ( 1.0f - vBlendFactors.x ) + terrain_normalLU * vBlendFactors.x ) * ( 1.0f - vBlendFactors.z ) +
-			( terrain_normalRD * ( 1.0f - vBlendFactors.y ) + terrain_normal   * vBlendFactors.y ) * vBlendFactors.z;
-
 	}
-	
-	terrain_normal = normalize( terrain_normal );
-
-	normal = normal.yxz * terrain_normal.x
-		+ normal.xyz * terrain_normal.y
-		+ normal.xzy * terrain_normal.z;
 	
 	float3 TerrainColor = tex2D( TerrainColorTint, Input.uv2 ).rgb;	
 	sample.rgb = GetOverlay( sample.rgb, TerrainColor, 0.5f );
-	terrain_color.rgb = calculate_secondary( Input.uv, terrain_color.rgb, Input.prepos.xz );
 	
 	float2 vBlend = float2( 0.4f, 0.45f );
-	
 	float3 vOut = ( dot(sample.rgb, GREYIFY) * vBlend.x + terrain_color.rgb * vBlend.y );
 	
 	vOut = CalculateLighting( vOut, normal );
