@@ -1,5 +1,3 @@
 LTM lite
 ...
 very lite
-
-novus graphicus?
