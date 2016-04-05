@@ -20,11 +20,11 @@ categories =  {
 	}
 
 	arctic = {
-		movement_cost = 1.2
+		movement_cost = 1.5
 		max_attrition = 0.1
 		color = { 235 235 235 }
 		supply_limit = 1
-		bottleneck_chance = 15
+		bottleneck_chance = 30
 	}
 
 	farmlands = {
