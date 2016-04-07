@@ -128,7 +128,7 @@ VS_OUTPUT_BORDER main( const VS_INPUT_BORDER VertexIn )
 
 	float vClampHeight = saturate( ( WATER_HEIGHT - VertexIn.position.y ) * 10000 );
 
-	pos.y = vClampHeight * WATER_HEIGHT + ( 1.0f - vClampHeight ) * pos.y +0.2f;
+	pos.y = vClampHeight * WATER_HEIGHT + ( 1.0f - vClampHeight ) * pos.y;
 	VertexOut.pos = pos.xyz;
 
 	float4 vDistortedPos = pos - float4( vCamLookAtDir * 0.05f, 0.0f );
