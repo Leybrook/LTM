@@ -2,73 +2,89 @@ Changelog
 
 
 LTM (C)
-- New non-passable border
-- New country border
-- [Optional] Selection of rejected country borders + 1 old + all vanilla
-- Removed cold/frozen rivers completely
-- Lowered borders by 50% settings 
-- [Vote results] Height shadows in non-terrain modes are kept
-- Slight increase of map transparency & saturation
-- Slight increase of terrain saturation
-- Slight correction of most fake lakes
-- Removed seams around the Urals and Iran
-- Recoloured Gotland and other Baltic Isles
-- Recoloured Spain and Italy
-- [Recoloured Carpathians
-- [WIP] Recoloured Himilayas
-- Reshaped terrain of Massif Central
-- Reshaped terrain of Britain
-- Reshaped topology of Scotland
-- Moved Italian Apennines terrain to its corresponding topology
-- Moved Göta highlands terrain to its corresponding topology
-- Corrected shore colour of the south Caspian sea
-- Replaced texture for hills
-- Replaced texture for foothills
-- Adjusted texture for marshes
-- Flooded fake lakes with real water in Nordkalotten
-- [To-Do] Rework Armenia valleys
-- Reworked ME hills and mountains and seperated terrain from western
-- Added seperate textures for hills and mountains in arid areas
-- Added seperate texture for hills in asia minor
-- Reworked texture of arid plains
-- Decreased red hue in arid climate
-- Increased green hue in temperate climates
-- Recoloured water
-- Corrected colour and contours of sea depths
-- [Optional] Basic flat map
-- [Optional] Flater map
-- Expanded farmland: focus on rivers, outlets, and branches
-- [Temporary] Farmland function as plains
-- Diversified colour of farmland
-- Added ice texture
-- Added two textures as coastline terrain
-- Added coastlines to France, Portugal, north Spain, Sicily, Corsica, Sardinia, ... TBC
-- Removed paradox's terrain seams
-- Increased water height
-- Increased water height cap
-- [Optional] Old snow texture with new spread
-- Adjusted snow colour
-- Adjusted tree width & height
-- Replaced normal for most textures
-- Increased normal sharpness for most textures
-- [WIP] Increased mipmap sharpness
-- [remind] checksum friendly for vanilla
-- [remind] update trees for swmh
-- Corrected colour of salt lakes
-- Trees taller and slightly wider
-- Reshaped Irish terrain
-- Adjusted Turkey colour
+	**ALTERNATE REQUESTED FILES**
+		- [Optional] Selection of alternate, & rejected country borders + old + all vanilla
+		- [Optional] High saturation-Low Transparency in political mode
+		- [Optional] Basic flat map
+		- [Optional] Old snow texture with new spread
+	**BORDERS**
+		- New non-passable border
+		- New country border
+		- New province border
+		- Slight increase in border intensity, still less than vanilla
+		- Non-realm border now fade away as the camera is pulled back
+		- Lowered border height to vanilla settings
+	**MAP CHANGES**
+		- Reshaped terrain of Massif Central
+		- Reshaped terrain of Britain
+		- Reshaped topology of Scotland
+		- Reshaped terrain along Tigris & Euphrates
+		- Reshaped trees in Nordkalotten, Finland, Novgorod, Baltics, & Sweden
+		- Reshaped terrain in Nordkalotten, Finland, Novgorod, Baltics, & Sweden
+		- Reshaped Irish terrain
+		- Reshaped Armenian valley topology to be softer & follow terrain
+		- Added northern wetlands
+		- Added farmland: focus on rivers, outlets, & branches
+		- Added coastlines (cliffs & beaches) to France, Portugal, north Spain, Sicily, Corsica, Sardinia... (TBC)
+		- Moved Italian Apennines terrain to its corresponding topology
+		- Moved Göta highlands terrain to its corresponding topology
+		- Removed trees for himalayan treeline
+		- Removed the green plains' sharpness around damascus
+		- Compatibility with SWMH's arabia release
+	**RECOLOURING**
+		- Removed vanilla's seasonal recolouring of rivers
+		- Expanded physical ice range to cover russian rivers
+		- Slightly recoloured of most fake lakes
+		- Recoloured Gotland & other Baltic Isles
+		- Recoloured Iberia & Italy
+		- Recoloured Carpathians
+		- Recoloured Himilayas
+		- Recoloured Turkey (TBC)
+		- Recoloured shores of caspian sea, north africa, & normandy
+		- Added salt lakes
+		- Removed seams around the Urals & Iran
+		- Adjusted snow colour
+		- Corrected colours & contours of water depths
+		- Recoloured water in all map modes
+	**TEXTURES**
+		- Replaced texture for hills
+		- Replaced texture for foothills
+		- Reworked texture for marshland
+		- Reworked texture for arid plains
+		- Reworked texture for farmland
+		- Flooded fake lakes with real water in Nordkalotten
+		- Added seperate texture for mountains in arid areas
+		- Added seperate texture for hills in arid areas
+		- Added seperate texture for hills in asia minor
+		- Added two textures for coastline terrain
+		- Replaced texture for ice
+		- Reverted desert texture back to vanilla (with adjustments)
+		- Increased normal sharpness for most textures
+		- Increased mipmap sharpness for most textures
+		- Slightly increased saturation in all textures
+	**VALUES**
+		- Increased water height & water height cap
+		- Increased trees width & height
+		- Replaced normal for most textures
+		- Decreased red hue in arid climate
+		- Increased green hue in temperate climates
+		- [Temporary] Farmland function as plains
+		- Renamed Arctic terrain to Boreal
+		- Added localisation for marshland terrain
+		- Increased boreal's movement cost & bottleneck chance
+		- Removed/Lessened paradox's terrain seams
+		- Increased of map transparency & saturation
 
----add changes from github
 
 
 LTM (B)
-- Reshaped nile terrain & trees
-- Partially replaced textures for better looking snow & mountain 'crevices'
-- Trimmed trees in Russia
-- Resized construction model as it became too big
-- Increased texture density
+	- Reshaped terrain & trees along Nile Delta
+	- Partially replaced textures for better looking snow & mountain 'crevices'
+	- Trimmed trees in Russia
+	- Resized construction model as it became too big
+	- Increased texture density
+
 
 
 LTM (A)
-- first release
+	- first release
