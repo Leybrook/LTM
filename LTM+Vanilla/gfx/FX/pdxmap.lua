@@ -444,7 +444,7 @@ float4 main( VS_OUTPUT_TERRAIN Input ) : COLOR
 	float3 TerrainColor = tex2D( TerrainColorTint, Input.uv2 ).rgb;	
 	sample.rgb = GetOverlay( sample.rgb, TerrainColor, 0.5f );
 	
-	float2 vBlend = float2( 0.5, 0.65f );
+	float2 vBlend = float2( 0.5, 0.85f );
 	float3 vOut = ( dot(sample.rgb, GREYIFY * 3.0f) * vBlend.x + terrain_color.rgb * vBlend.y );
 
 	vOut = CalculateLighting( vOut, normal )*1.0f;
