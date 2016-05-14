@@ -274,8 +274,13 @@ float4 main( VS_OUTPUT_WATER Input ) : COLOR
 	refractiveUV += vTime_HalfPixelOffset.gb;
 	float vRefractionScale = saturate( 5.0f - ( Input.screen_pos.z / Input.screen_pos.w ) * 5.0f );
 	float3 refractiveColor = tex2D( WaterRefraction, (refractiveUV.xy - normal.xz * vRefractionScale * 0.2f) ).rgb;
-	float waterHeight = tex2D( HeightTexture, Input.uv * vMapSize.zw ).x;
+
+	float2 ColorMapUV = Input.uv;
+	ColorMapUV.y = 1.0f - ColorMapUV.y;
+	float4 ColormapColor = tex2D( ProvinceColorMap, ColorMapUV.xy );
+	
 	float4 waterColor = tex2D( WaterColor, Input.uv * vMapSize.zw );
+	float waterHeight = tex2D( HeightTexture, Input.uv * vMapSize.zw ).x;
 
 	waterHeight /= ( 93.7f / 255.0f );
 	waterHeight = saturate( ( waterHeight - 0.995f ) * 50.0f );
@@ -291,9 +296,13 @@ float4 main( VS_OUTPUT_WATER Input ) : COLOR
 	float vSpecMultiplier = 3.0f;
 	float specular = saturate( pow( saturate( dot( H, normal ) ), vSpecWidth ) * vSpecMultiplier );
 
-	refractiveColor = lerp( refractiveColor, waterColor.rgb, 0.3f );
+	float2 vBlend = float2( 0.65f, 0.35f );
+
+	refractiveColor = lerp( refractiveColor, waterColor.rgb, 0.0f );
 	float3 outColor = refractiveColor * ( 1.0f - fresnel ) + reflectiveColor * fresnel;
 	
+	outColor = outColor * vBlend.x + ColormapColor.rgb * vBlend.y;
+
 	float vFoW = GetFoW( Input.pos, FoWTexture, FoWDiffuse );
 	outColor = ApplyDistanceFog( outColor, Input.pos ) * vFoW;
 
