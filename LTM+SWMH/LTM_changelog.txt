@@ -1,5 +1,6 @@
 Changelog
-
+LTM (C) compatch for 2.6
+	- Fixed the issue of vassal borders reappearing at the far away zoom
 
 LTM (C)
 	**ALTERNATE REQUESTED FILES**
