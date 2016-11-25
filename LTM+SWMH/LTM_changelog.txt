@@ -28,7 +28,7 @@ LTM (C)
 		- Added farmland: focus on rivers, outlets, & branches
 		- Added coastlines (cliffs & beaches) to France, Portugal, north Spain, Sicily, Corsica, Sardinia... (TBC)
 		- Moved Italian Apennines terrain to its corresponding topology
-		- Moved GÃ¶ta highlands terrain to its corresponding topology
+		- Moved Göta highlands terrain to its corresponding topology
 		- Removed trees for himalayan treeline
 		- Removed the green plains' sharpness around damascus
 		- Compatibility with SWMH's arabia release
