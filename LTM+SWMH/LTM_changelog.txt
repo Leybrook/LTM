@@ -1,4 +1,10 @@
-Changelog
+###Changelog###
+LTM (C) compatch for 2.7
+	- Adjustments to colourmap
+	
+LTM (C) compatch for SWMH's timeline expansion
+	- LTM map adjustments to fit corresponding SWMH map changes
+	
 LTM (C) compatch for 2.6
 	- Fixed the issue of vassal borders reappearing at the far away zoom
 
@@ -76,16 +82,12 @@ LTM (C)
 		- Removed/Lessened paradox's terrain seams
 		- Increased of map transparency & saturation
 
-
-
 LTM (B)
 	- Reshaped terrain & trees along Nile Delta
 	- Partially replaced textures for better looking snow & mountain 'crevices'
 	- Trimmed trees in Russia
 	- Resized construction model as it became too big
 	- Increased texture density
-
-
 
 LTM (A)
 	- first release
