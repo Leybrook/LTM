@@ -1,4 +1,6 @@
 ###Changelog###
+LTM (C) Hotfix
+	- Lowered snow brightness
 LTM (C) compatch for 2.7
 	- Adjustments to colourmap
 	
