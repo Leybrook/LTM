@@ -184,7 +184,7 @@ float3 ApplyDistanceFog( float3 vColor, float3 vPos, in sampler2D FoWTexture, in
 const static float SNOW_START_HEIGHT 	= 16.0f;
 const static float SNOW_RIDGE_START_HEIGHT 	= 22.0f;
 const static float SNOW_NORMAL_START 	= 0.7f;
-const static float3 SNOW_COLOR = float3( 0.86f, 0.92f, 0.96f );
+const static float3 SNOW_COLOR = float3( 0.86f, 0.88f, 1.0f );
 const static float3 SNOW_WATER_COLOR = float3( 0.5f, 0.7f, 0.7f );
 
 float GetSnow( float4 vFoWColor )
