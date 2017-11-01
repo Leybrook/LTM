@@ -1,4 +1,6 @@
 ###Changelog###
+LTM (C) compatch for hydra release
+		- Indus delta terrain change
 LTM (C) Hotfix
 	- Lowered snow brightness
 LTM (C) compatch for 2.7
