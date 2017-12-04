@@ -1,4 +1,11 @@
 ###Changelog###
+LTM (C) compatch for 2.8
+	- Adjusted brightness for the new terrain-in-wasteland feature
+	- Removed normal maps for the new terrain-in-wasteland feature (as it was in previous versions)
+	- Adjusted ice texture for the new terrain-in-wasteland feature
+	- Updated mapitems to include JD CoAs
+LTM (C) compatch for hydra release
+	- Indus delta terrain change
 LTM (C) Hotfix
 	- Lowered snow brightness
 LTM (C) compatch for 2.7
