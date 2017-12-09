@@ -1,11 +1,14 @@
 ###Changelog###
-LTM (C) compatch for 2.8
+LTM (C) compatch for 2.8 and SWMH 
 	- Adjusted brightness for the new terrain-in-wasteland feature
 	- Removed normal maps for the new terrain-in-wasteland feature (as it was in previous versions)
 	- Adjusted ice texture for the new terrain-in-wasteland feature
 	- Updated mapitems to include JD CoAs
-LTM (C) compatch for hydra release
-	- Indus delta terrain change
+	- Adjusted Hungarian lakes to match 
+	- Adjusted Indus delta to match SWMH
+	- Adjusted Indus delta to match SWMH
+	- Adjusted Pommeranian coast to match SWMH
+	- More farmland along the Nile
 LTM (C) Hotfix
 	- Lowered snow brightness
 LTM (C) compatch for 2.7
