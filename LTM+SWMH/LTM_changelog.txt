@@ -1,4 +1,6 @@
 ###Changelog###
+LTM (C) 
+	- Adjusted non-visual terrain properties
 LTM (C) compatch for 3.1.1
 	- Compatibility patch for CKII v3.1.1 (adjusted non-visual terrain properties)
 LTM (C) compatch for 2.8 and SWMH 
